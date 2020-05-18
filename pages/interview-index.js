@@ -4,6 +4,8 @@ const interviewList = document.querySelector('.interview-list');
 const openAccount = document.getElementById('account-open');
 const account_modal_container = document.getElementById('account_modal_container');
 const account_close = document.getElementById('account_close');
+const openInterview = document.getElementById('interview-open');
+const interview_modal_container = document.getElementById('interview_modal_container');
 
 openAccount.addEventListener('click', () => {
     account_modal_container.classList.add('show');
@@ -11,7 +13,17 @@ openAccount.addEventListener('click', () => {
 account_close.addEventListener('click', () => {
     account_modal_container.classList.remove('show');
 })
+openInterview.addEventListener('click', () => {
+    interview_modal_container.classList.add('show');
+})
 
+account_close.addEventListener('click', () => {
+    account_modal_container.classList.remove('show');
+})
+
+interview_close.addEventListener('click', () => {
+    interview_modal_container.classList.remove('show');
+})
 // Toggle menu items in mobile view
 const burger = document.getElementById('burger');
 const ul = document.querySelector('nav ul');
@@ -40,6 +52,10 @@ const adminItems = document.querySelectorAll('.admin');
  */
 const setupUI = (user) => {
     if (user) {
+        if (user.admin) {
+            // Display admin items if the user logged in has the admin property (if is an admin)
+            adminItems.forEach(item => item.style.display = 'block')
+        }
         // Show account info & use the user's unique id to query the firestore for a specific document in a specific collection
         db.collection('users').doc(user.uid).get().then(doc => {
             const html = `

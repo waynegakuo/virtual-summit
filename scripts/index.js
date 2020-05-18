@@ -59,6 +59,9 @@ const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 const optInForm = document.querySelector('#opt-in-form');
 
+// Reference link to interviews in the landing page
+const viewInterviews = document.querySelector('.view-interviews');
+
 
 // Reference to the account pop-up
 const accountDetails = document.querySelector('.account-details');
@@ -77,7 +80,7 @@ const setupUI = (user) => {
         if (user.admin) {
             // Display admin items if the user logged in has the admin property (if is an admin)
             adminItems.forEach(item => item.style.display = 'block')
-            optInForm.style.display ='none'; // Hide the opt-in form if user signed in is an admin
+            optInForm.style.display = 'none'; // Hide the opt-in form if user signed in is an admin
         }
         // Show account info & use the user's unique id to query the firestore for a specific document in a specific collection
         db.collection('users').doc(user.uid).get().then(doc => {
@@ -87,19 +90,22 @@ const setupUI = (user) => {
             <div class="pink-text">${user.admin ? 'Admin' : ''}</div>
         `;
             accountDetails.innerHTML = html;
+            
         })
         // Toggle UI elements
         loggedInLinks.forEach(item => item.style.display = 'block');
         loggedOutLinks.forEach(item => item.style.display = 'none');
-        optInForm.style.display ='none'; // Hide opt-in form if user is signed in
+        optInForm.style.display = 'none'; // Hide opt-in form if user is signed in
+        viewInterviews.style.display = 'flex'
     }
-    else {
+    else { // When logged out
         // Hide admin items
         adminItems.forEach(item => item.style.display = 'none')
         // Hide account info
         accountDetails.innerHTML = '';
         // Toggle UI elements
-        optInForm.style.display ='flex'; // Show opt-in form if user is signed in
+        viewInterviews.style.display = 'none'
+        optInForm.style.display = 'flex'; // Show opt-in form if user is signed in
         loggedInLinks.forEach(item => item.style.display = 'none');
         loggedOutLinks.forEach(item => item.style.display = 'block');
     }

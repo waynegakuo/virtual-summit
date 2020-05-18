@@ -30,7 +30,7 @@
 
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li class="logged-in" style="display: none;"><a href="pages/interview.html">View Interviews</a></li>
+            <li class="logged-in" style="display: none;"><a href="interview.html">View Interviews</a></li>
             <li class="admin" style="display: none;"><a href="#" id="interview-open">Create Interview Details</a></li>
             <li class="logged-in" style="display: none;"><a href="#" id="logout">Logout</a></li>
             <li class="logged-in" style="display: none;"><a href="#" id="account-open">Account</a></li>
@@ -48,9 +48,29 @@
     <!-- ACCOUNT MODAL -->
     <div class="account-modal-container" id="account_modal_container">
         <div class="modal">
+            <span class="close" id="account_close"></span>
             <h4>Account details</h4><br />
             <div class="account-details"></div>
-            <button id="account_close">Close</button>
+        </div>
+    </div>
+
+    <!-- CREATE INTERVIEW DETAILS MODAL -->
+    <div class="interview-modal-container" id="interview_modal_container">
+        <div class="modal">
+            <span class="close" id="interview_close"></span>
+            <h1>Create Interview Details</h1>
+            <form id="interview-form">
+                <label for="text">Name of Interviewee</label>
+                <input type="text" placeholder="Name" id="interviewee-name" required>
+                <label for="text">Link to Interviewee's Video</label>
+                <input type="text" placeholder="Video Link" id="interviewee-video-link" required>
+                <label for="text">Link to Interviewee's Website</label>
+                <input type="text" placeholder="Website Link" id="interviewee-website" required>
+                <label>Bio of Interviewee</label>
+                <textarea id="interviewee-bio" placeholder="Bio" cols="30" rows="10" required></textarea>
+                <button>Submit Details</button>
+                <p class="error"></p>
+            </form>
         </div>
     </div>
 

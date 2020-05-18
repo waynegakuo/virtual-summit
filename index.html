@@ -42,9 +42,10 @@
     </div>
     <div class="content">
 
+        <a href="pages/interview.html" class="view-interviews" style="display: none;">View Interviews Posted >></a>
+
         <!-- ADMIN ACTIONS -->
-        <form class="admin-actions admin"
-            style="display: flex; flex-direction: column; align-items: center; justify-content: 
+        <form class="admin-actions admin" style="display: flex; flex-direction: column; align-items: center; justify-content: 
                 center; margin: 40px auto; max-width: 300px; display: none;">
             <input type="email" placeholder="User Email" id="admin-email" required />
             <button>Make Admin</button>
@@ -61,9 +62,9 @@
         <!-- ACCOUNT MODAL -->
         <div class="account-modal-container" id="account_modal_container">
             <div class="modal">
+                <span class="close" id="account_close"></span>
                 <h4>Account details</h4><br />
                 <div class="account-details"></div>
-                <button id="account_close">Close</button>
             </div>
         </div>
 
@@ -71,6 +72,7 @@
         <!-- LOGIN MODAL -->
         <div class="login-modal-container" id="login_modal_container">
             <div class="modal">
+                <span class="close" id="login_close"></span>
                 <h1>Log in</h1>
                 <form id="login-form">
                     <label for="email">Email Address</label>
@@ -80,13 +82,13 @@
                     <button>Log In</button>
                     <p class="error"></p>
                 </form>
-                <button id="login_close">Close</button>
             </div>
         </div>
 
         <!-- SIGNUP MODAL -->
         <div class="signup-modal-container" id="signup_modal_container">
             <div class="modal">
+                <span class="close" id="signup_close"></span>
                 <h1>Sign Up</h1>
                 <form id="signup-form">
                     <label for="email">Email Address</label>
@@ -98,13 +100,13 @@
                     <button>Sign Up</button>
                     <p class="error"></p>
                 </form>
-                <button id="signup_close">Close</button>
             </div>
         </div>
 
         <!-- CREATE INTERVIEW DETAILS MODAL -->
         <div class="interview-modal-container" id="interview_modal_container">
             <div class="modal">
+                <span class="close" id="interview_close"></span>
                 <h1>Create Interview Details</h1>
                 <form id="interview-form">
                     <label for="text">Name of Interviewee</label>
@@ -118,7 +120,6 @@
                     <button>Submit Details</button>
                     <p class="error"></p>
                 </form>
-                <button id="interview_close">Close</button>
             </div>
         </div>
 

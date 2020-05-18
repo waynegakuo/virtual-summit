@@ -10,7 +10,6 @@ adminForm.addEventListener('submit', (e) => {
         console.log(result);
     })
 })
-
 /**
  * Listen for auth status changes
  * When you call the onSnapshot method, it returns an object 

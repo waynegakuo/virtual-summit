@@ -1,4 +1,17 @@
 /**
+ * Add admin Cloud Function
+ */
+const adminForm = document.querySelector('.admin-actions');
+adminForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const adminEmail = document.querySelector('#admin-email').value;
+    const addAdmin = functions.httpsCallable('addAdminRole');
+    addAdmin({ email: adminEmail }).then(result => {
+        console.log(result);
+    })
+})
+
+/**
  * Listen for auth status changes
  * When you call the onSnapshot method, it returns an object 
  * that you can use to unsubscribe from the listener and prevent the error.

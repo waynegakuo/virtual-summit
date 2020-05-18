@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interviews</title>
+
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/nav.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-functions.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+</head>
+
+<body>
+    <nav>
+        <p>Virtual Summit</p>
+
+        <button class="burger" id="burger">
+            &#9776
+        </button>
+
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="logged-in" style="display: none;"><a href="pages/interview.html">View Interviews</a></li>
+            <li class="admin" style="display: none;"><a href="#" id="interview-open">Create Interview Details</a></li>
+            <li class="logged-in" style="display: none;"><a href="#" id="logout">Logout</a></li>
+            <li class="logged-in" style="display: none;"><a href="#" id="account-open">Account</a></li>
+            <li class="logged-out" style="display: none;"><a href="#" id="login-open">Login</a></li>
+            <li class="logged-out" style="display: none;"><a href="#" id="signup-open">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="interview-list">
+
+        </div>
+    </div>
+
+    <!-- ACCOUNT MODAL -->
+    <div class="account-modal-container" id="account_modal_container">
+        <div class="modal">
+            <h4>Account details</h4><br />
+            <div class="account-details"></div>
+            <button id="account_close">Close</button>
+        </div>
+    </div>
+
+
+
+
+    <!-- Referencing the firebase-settings file -->
+    <script src="../scripts/firebase-settings.js"></script>
+
+    <!-- <script src="../scripts/auth.js"></script> -->
+    <script src="interview-auth.js"></script>
+    <!-- <script src="../scripts/index.js"></script> -->
+    <script src="interview-index.js"></script>
+</body>
+
+</html>

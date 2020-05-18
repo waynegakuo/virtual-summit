@@ -28,18 +28,28 @@
         </button>
 
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">View Interviews</a></li>
-            <li><a href="#">Create Interview Details</a></li>
-            <li><a href="#" id="logout">Logout</a></li>
-            <li><a href="#" id="login-open">Login</a></li>
-            <li><a href="#" id="signup-open">Sign Up</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li class="logged-in"><a href="#">View Interviews</a></li>
+            <li class="admin"><a href="#" id="interview-open">Create Interview Details</a></li>
+            <li class="logged-in"><a href="#" id="logout">Logout</a></li>
+            <li class="logged-in"><a href="#" id="account-open">Account</a></li>
+            <li class="logged-out"><a href="#" id="login-open">Login</a></li>
+            <li class="logged-out"><a href="#" id="signup-open">Sign Up</a></li>
         </ul>
     </nav>
     <div class="banner">
         <img src="img/banner_white.jpg" alt="banner">
     </div>
     <div class="content">
+
+        <!-- ADMIN ACTIONS -->
+        <form class="admin-actions admin"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: 
+                center; margin: 40px auto; max-width: 300px; display: none;">
+            <input type="email" placeholder="User Email" id="admin-email" required />
+            <button>Make Admin</button>
+        </form>
+
         <form id="opt-in-form" class="opt-in-form">
             <label for="email">Email Address</label>
             <input type="email" placeholder="Your email address" id="opt-in-email">
@@ -52,11 +62,14 @@
 
         </div>
 
-        <!-- ADMIN ACTIONS -->
-        <form class="admin" style="margin: 40px auto; max-width: 300px; display: none;">
-            <input type="email" placeholder="User email" id="admin-email" required />
-            <button>Make admin</button>
-        </form>
+        <!-- ACCOUNT MODAL -->
+        <div class="account-modal-container" id="account_modal_container">
+            <div class="modal">
+                <h4>Account details</h4><br />
+                <div class="account-details"></div>
+                <button id="account_close">Close</button>
+            </div>
+        </div>
 
 
         <!-- LOGIN MODAL -->
@@ -90,6 +103,26 @@
                     <p class="error"></p>
                 </form>
                 <button id="signup_close">Close</button>
+            </div>
+        </div>
+
+        <!-- CREATE INTERVIEW DETAILS MODAL -->
+        <div class="interview-modal-container" id="interview_modal_container">
+            <div class="modal">
+                <h1>Create Interview Details</h1>
+                <form id="interview-form">
+                    <label for="text">Name of Interviewee</label>
+                    <input type="text" placeholder="Name" id="interviewee-name" required>
+                    <label for="text">Link to Interviewee's Video</label>
+                    <input type="text" placeholder="Video Link" id="interviewee-video-link" required>
+                    <label for="text">Link to Interviewee's Website</label>
+                    <input type="text" placeholder="Website Link" id="interviewee-website" required>
+                    <label>Bio of Interviewee</label>
+                    <textarea id="interviewee-bio" placeholder="Bio" cols="30" rows="10" required></textarea>
+                    <button>Submit Details</button>
+                    <p class="error"></p>
+                </form>
+                <button id="interview_close">Close</button>
             </div>
         </div>
 

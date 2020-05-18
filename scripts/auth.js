@@ -1,5 +1,3 @@
-const submitOptinInfo = document.querySelector('#opt-in-form');
-
 /**
  * Listen for auth status changes
  * When you call the onSnapshot method, it returns an object 
@@ -9,11 +7,11 @@ const submitOptinInfo = document.querySelector('#opt-in-form');
 let unsubscribe = () => { };
 auth.onAuthStateChanged(user => {
     if (user) { // fires is user is logged in
-        // user.getIdTokenResult().then(idTokenResult => {
-        //     // console.log(idTokenResult.claims);
-        //     user.admin = idTokenResult.claims.admin; // attaching the admin property to the user temporarily ~ solves issue of log out -log in
-        //     setupUI(user)
-        // })
+        user.getIdTokenResult().then(idTokenResult => {
+            // console.log(idTokenResult.claims);
+            user.admin = idTokenResult.claims.admin; // attaching the admin property to the user temporarily ~ solves issue of log out -log in
+            setupUI(user)
+        })
         // Get data from Firestore using Realtime listener
         unsubscribe = db.collection('interviews').onSnapshot(snapshot => {
             setupInterviews(snapshot.docs) // this method is in the index.js file
@@ -21,20 +19,53 @@ auth.onAuthStateChanged(user => {
         console.log('User logged in')
     }
     else {
-        // setupUI()
+        setupUI()
         setupInterviews([])
         unsubscribe();
         console.log('User logged out');
     }
 });
 
-// Get email and name for opt in
-submitOptinInfo.addEventListener('submit', (e) => {
-    e.preventDefault()
+// Create new interview from input and put in the interviews collection
+const createForm = document.querySelector('#interview-form');
 
-    const email = submitOptinInfo['opt-in-email'].value;
-    const name = submitOptinInfo['opt-in-name'].value
-    console.log('Submitting info to Firebase...', email, name)
+createForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    db.collection('interviews').add({
+        bio: createForm['interviewee-bio'].value,
+        name: createForm['interviewee-name'].value,
+        video_link: createForm['interviewee-video-link'].value,
+        website: createForm['interviewee-website'].value
+    }).then(() => {
+        // Close the modal and reset form
+        console.log('Done sending info')
+        const interview_modal_container = document.querySelector('#interview_modal_container')
+        interview_modal_container.classList.remove('show');
+        createForm.reset();
+        createForm.querySelector('.error').innerHTML = '';
+    }).catch(err => {
+        console.log(err.message)
+    })
+})
+
+
+// Get email and name for opt in
+const submitOptinInfo = document.querySelector('#opt-in-form');
+
+submitOptinInfo.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    db.collection('subscribers').add({
+        email: submitOptinInfo['opt-in-email'].value,
+        name: submitOptinInfo['opt-in-name'].value
+    }).then(() => {
+        console.log('Info Submitted to Firebase...')
+        submitOptinInfo.reset();
+    }).catch(err => {
+        console.log(err.message)
+    })
+
 })
 
 // Sign up User

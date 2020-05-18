@@ -1,5 +1,33 @@
 const submitOptinInfo = document.querySelector('#opt-in-form');
 
+/**
+ * Listen for auth status changes
+ * When you call the onSnapshot method, it returns an object 
+ * that you can use to unsubscribe from the listener and prevent the error.
+ * param @user
+ */
+let unsubscribe = () => { };
+auth.onAuthStateChanged(user => {
+    if (user) { // fires is user is logged in
+        // user.getIdTokenResult().then(idTokenResult => {
+        //     // console.log(idTokenResult.claims);
+        //     user.admin = idTokenResult.claims.admin; // attaching the admin property to the user temporarily ~ solves issue of log out -log in
+        //     setupUI(user)
+        // })
+        // Get data from Firestore using Realtime listener
+        unsubscribe = db.collection('interviews').onSnapshot(snapshot => {
+            setupInterviews(snapshot.docs) // this method is in the index.js file
+        })
+        console.log('User logged in')
+    }
+    else {
+        // setupUI()
+        setupInterviews([])
+        unsubscribe();
+        console.log('User logged out');
+    }
+});
+
 // Get email and name for opt in
 submitOptinInfo.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -34,7 +62,6 @@ signupForm.addEventListener('submit', (e) => {
         })
     }).then(() => {
         const signup_modal_container = document.querySelector('#signup_modal_container')
-        // M.Modal.getInstance(modal).close()
         signup_modal_container.classList.remove('show');
         signupForm.reset();
         signupForm.querySelector('.error').innerHTML = '';
@@ -57,7 +84,6 @@ loginForm.addEventListener('submit', (e) => {
         console.log(cred.user)
         // Close login modal and reset the form
         const login_modal_container = document.querySelector('#login_modal_container')
-        // M.Modal.getInstance(modal).close()
         login_modal_container.classList.remove('show');
         loginForm.reset();
         loginForm.querySelector('.error').innerHTML = '';

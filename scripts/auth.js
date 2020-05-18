@@ -25,15 +25,10 @@ auth.onAuthStateChanged(user => {
             user.admin = idTokenResult.claims.admin; // attaching the admin property to the user temporarily ~ solves issue of log out -log in
             setupUI(user)
         })
-        // Get data from Firestore using Realtime listener
-        unsubscribe = db.collection('interviews').onSnapshot(snapshot => {
-            setupInterviews(snapshot.docs) // this method is in the index.js file
-        })
         console.log('User logged in')
     }
     else {
         setupUI()
-        setupInterviews([])
         unsubscribe();
         console.log('User logged out');
     }

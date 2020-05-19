@@ -69,6 +69,7 @@ submitOptinInfo.addEventListener('submit', (e) => {
     }).then(() => {
         console.log('Info Submitted to Firebase...')
         submitOptinInfo.reset();
+        window.location.href='pages/thank-you.html'
     }).catch(err => {
         console.log(err.message)
     })

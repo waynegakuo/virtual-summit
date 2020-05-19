@@ -1,6 +1,16 @@
 // Getting reference to the content view to populate information from Firestore
 const interviewList = document.querySelector('.interview-list');
 
+// Toggle menu items in mobile view
+const burger = document.getElementById('burger');
+const ul = document.querySelector('nav ul');
+const content = document.querySelector('.content');
+
+burger.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    content.classList.toggle('push');
+})
+
 const openAccount = document.getElementById('account-open');
 const account_modal_container = document.getElementById('account_modal_container');
 const account_close = document.getElementById('account_close');
@@ -8,12 +18,16 @@ const openInterview = document.getElementById('interview-open');
 const interview_modal_container = document.getElementById('interview_modal_container');
 
 openAccount.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    content.classList.toggle('push');
     account_modal_container.classList.add('show');
 })
 account_close.addEventListener('click', () => {
     account_modal_container.classList.remove('show');
 })
 openInterview.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    content.classList.toggle('push');
     interview_modal_container.classList.add('show');
 })
 
@@ -23,13 +37,6 @@ account_close.addEventListener('click', () => {
 
 interview_close.addEventListener('click', () => {
     interview_modal_container.classList.remove('show');
-})
-// Toggle menu items in mobile view
-const burger = document.getElementById('burger');
-const ul = document.querySelector('nav ul');
-
-burger.addEventListener('click', () => {
-    ul.classList.toggle('show');
 })
 
 // Getting access to menu items for showing/hiding based on authentication
@@ -99,7 +106,7 @@ const setupInterviews = (data) => {
                     <div class="info">
                         <span id="name">${interview.name}</span>
                         <p id="bio">${interview.bio}</p>
-                        <a id="website" href="${interview.website}" target="_blank" rel="noopener">Follow me</a>
+                        <a id="website" href="${interview.website}" target="_blank" rel="noopener">Receive Gift</a>
                     </div>
                 </div>
             `;

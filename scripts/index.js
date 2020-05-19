@@ -4,9 +4,13 @@ const interviewList = document.querySelector('.interview-list');
 // Toggle menu items in mobile view
 const burger = document.getElementById('burger');
 const ul = document.querySelector('nav ul');
+const content = document.querySelector('.content');
+const banner = document.querySelector('.banner');
 
 burger.addEventListener('click', () => {
     ul.classList.toggle('show');
+    content.classList.toggle('push');
+    banner.classList.toggle('push');
 })
 
 // Open modals for Login, Signups, Account and Create Interview by clicking menu item
@@ -25,18 +29,26 @@ const account_close = document.getElementById('account_close');
 const interview_close = document.getElementById('interview_close')
 
 openLogin.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    banner.classList.toggle('push');
     login_modal_container.classList.add('show');
 });
 
 openSignUp.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    banner.classList.toggle('push');
     signup_modal_container.classList.add('show');
 });
 
 openAccount.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    banner.classList.toggle('push');
     account_modal_container.classList.add('show');
 })
 
 openInterview.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    banner.classList.toggle('push');
     interview_modal_container.classList.add('show');
 })
 

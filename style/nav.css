@@ -8,12 +8,14 @@ nav {
     overflow: hidden;
 }
 
-nav p {
+nav .home-link {
+    text-decoration: none;
     color: #0594ec;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .burger {
@@ -76,6 +78,7 @@ nav ul li a:hover::after{
         left: 10%;
         width: 80%;
         text-align: center;
+        border-radius: 5px;
         transform: translateX(120%);
         transition: transform 0.4s ease;
     }

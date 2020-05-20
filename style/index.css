@@ -27,7 +27,7 @@ img {
     width: 100%;
 }
 
-#opt-in-email, #opt-in-name{
+#opt-in-email, #opt-in-name, #opt-in-password{
     padding: 10px;
     width: 40%;
     outline: none;
@@ -354,4 +354,29 @@ iframe{
        margin-top: 300px;
        transition: all 0.3s ease; 
     }
+}
+
+#opt-in-form .error {
+    color: red;
+    font-weight: bold;
+}
+
+.thankyou-modal-container{
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+}
+.thankyou-modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
 }

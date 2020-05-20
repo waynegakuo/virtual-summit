@@ -11,23 +11,26 @@ burger.addEventListener('click', () => {
     content.classList.toggle('push');
 })
 
-const openAccount = document.getElementById('account-open');
-const account_modal_container = document.getElementById('account_modal_container');
+const openAccount = document.getElementById('account-open'); // trigger button
+const account_modal_container = document.getElementById('account_modal_container'); // the container to appear after trigger
 const account_close = document.getElementById('account_close');
+const openLogin = document.getElementById('login-open');
+
 const openInterview = document.getElementById('interview-open');
 const interview_modal_container = document.getElementById('interview_modal_container');
+const login_modal_container = document.getElementById('login_modal_container');
 
 openAccount.addEventListener('click', () => {
-    ul.classList.toggle('show');
-    content.classList.toggle('push');
+    ul.classList.toggle('show'); // When in mobile view
+    content.classList.toggle('push'); // When in mobile view
     account_modal_container.classList.add('show');
 })
 account_close.addEventListener('click', () => {
     account_modal_container.classList.remove('show');
 })
 openInterview.addEventListener('click', () => {
-    ul.classList.toggle('show');
-    content.classList.toggle('push');
+    ul.classList.toggle('show'); // When in mobile view
+    content.classList.toggle('push'); // When in mobile view
     interview_modal_container.classList.add('show');
 })
 
@@ -38,6 +41,11 @@ account_close.addEventListener('click', () => {
 interview_close.addEventListener('click', () => {
     interview_modal_container.classList.remove('show');
 })
+
+openLogin.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    login_modal_container.classList.add('show');
+});
 
 // Getting access to menu items for showing/hiding based on authentication
 const loggedOutLinks = document.querySelectorAll('.logged-out');

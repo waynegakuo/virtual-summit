@@ -1,3 +1,6 @@
+// Getting reference to the content view to populate information from Firestore
+const interviewList = document.querySelector('.interview-list');
+
 // Toggle menu items in mobile view
 const burger = document.getElementById('burger');
 const ul = document.querySelector('nav ul');
@@ -10,19 +13,57 @@ burger.addEventListener('click', () => {
     banner.classList.toggle('push');
 })
 
-// Open Account by clicking menu item
-
+// Open modals for Login, Signups, Account and Create Interview by clicking menu item
+const openLogin = document.getElementById('login-open');
+const openSignUp = document.getElementById('signup-open');
 const openAccount = document.getElementById('account-open');
+const openInterview = document.getElementById('interview-open');
+
+const login_modal_container = document.getElementById('login_modal_container');
+const signup_modal_container = document.getElementById('signup_modal_container');
 const account_modal_container = document.getElementById('account_modal_container');
+const interview_modal_container = document.getElementById('interview_modal_container');
+const login_close = document.getElementById('login_close');
+const signup_close = document.getElementById('signup_close');
 const account_close = document.getElementById('account_close');
+const interview_close = document.getElementById('interview_close')
+
+openLogin.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    banner.classList.toggle('push');
+    login_modal_container.classList.add('show');
+});
+
+openSignUp.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    banner.classList.toggle('push');
+    signup_modal_container.classList.add('show');
+});
 
 openAccount.addEventListener('click', () => {
     ul.classList.toggle('show');
     banner.classList.toggle('push');
     account_modal_container.classList.add('show');
 })
+
+openInterview.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    banner.classList.toggle('push');
+    interview_modal_container.classList.add('show');
+})
+
+login_close.addEventListener('click', () => {
+    login_modal_container.classList.remove('show');
+});
+
+signup_close.addEventListener('click', () => {
+    signup_modal_container.classList.remove('show');
+});
 account_close.addEventListener('click', () => {
     account_modal_container.classList.remove('show');
+})
+interview_close.addEventListener('click', () => {
+    interview_modal_container.classList.remove('show');
 })
 
 // Getting access to menu items for showing/hiding based on authentication

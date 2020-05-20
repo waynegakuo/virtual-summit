@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Summit</title>
+    <link rel="stylesheet" href="../style/nav.css">
+    <link rel="stylesheet" href="../style/index.css">
+
+</head>
+
+<body>
+    <nav>
+        <a class="home-link" href="../index.html">Virtual Retreat</a>
+
+        <button class="burger" id="burger">
+            &#9776
+        </button>
+
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="logged-in" style="display: none;"><a href="interview.html">View Interviews</a></li>
+            <li class="admin" style="display: none;"><a href="#" id="interview-open">Create Interview Details</a></li>
+            <li class="logged-in" style="display: none;"><a href="#" id="logout">Logout</a></li>
+            <li class="logged-in" style="display: none;"><a href="#" id="account-open">Account</a></li>
+            <li class="logged-out" style="display: none;"><a href="#" id="login-open">Login</a></li>
+            <li class="logged-out" style="display: none;"><a href="#" id="signup-open">Sign Up</a></li>
+        </ul>
+    </nav>
+    <div class="banner">
+        <img src="../img/banner_green.jpg" alt="banner">
+    </div>
+    <div class="content">
+
+        <a href="interview.html" class="view-interviews" style="display: none;">View Interviews Posted >></a>
+
+        <!-- ADMIN ACTIONS -->
+        <form class="admin-actions admin" style="display: flex; flex-direction: column; align-items: center; justify-content: 
+                center; margin: 40px auto; max-width: 300px; display: none;">
+            <input type="email" placeholder="User Email" id="admin-email" required />
+            <button>Make Admin</button>
+        </form>
+
+        <!-- ACCOUNT MODAL -->
+        <div class="account-modal-container" id="account_modal_container">
+            <div class="modal">
+                <span class="close" id="account_close"></span>
+                <h4>Account details</h4><br />
+                <div class="account-details"></div>
+            </div>
+        </div>
+
+
+        <!-- LOGIN MODAL -->
+        <div class="login-modal-container" id="login_modal_container">
+            <div class="modal">
+                <span class="close" id="login_close"></span>
+                <h1>Log in</h1>
+                <form id="login-form">
+                    <label for="email">Email Address</label>
+                    <input type="email" placeholder="Email" id="login-email" required>
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Password" id="login-password" required>
+                    <button>Log In</button>
+                    <p class="error"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- SIGNUP MODAL -->
+        <div class="signup-modal-container" id="signup_modal_container">
+            <div class="modal">
+                <span class="close" id="signup_close"></span>
+                <h1>Sign Up</h1>
+                <form id="signup-form">
+                    <label for="email">Email Address</label>
+                    <input type="email" placeholder="Your email address" id="signup-email" required>
+                    <label for="password">Create a Password</label>
+                    <input type="password" placeholder="Password" id="signup-password" required>
+                    <label for="bio">Tell us a bit about yourself</label>
+                    <textarea placeholder="Bio" id="signup-bio" cols="30" rows="10" required></textarea>
+                    <button>Sign Up</button>
+                    <p class="error"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- CREATE INTERVIEW DETAILS MODAL -->
+        <div class="interview-modal-container" id="interview_modal_container">
+            <div class="modal">
+                <span class="close" id="interview_close"></span>
+                <h1>Create Interview Details</h1>
+                <form id="interview-form">
+                    <label for="text">Name of Interviewee</label>
+                    <input type="text" placeholder="Name" id="interviewee-name" required>
+                    <label for="text">Link to Interviewee's Video</label>
+                    <input type="text" placeholder="Video Link" id="interviewee-video-link" required>
+                    <label for="text">Link to Interviewee's Website</label>
+                    <input type="text" placeholder="Website Link" id="interviewee-website" required>
+                    <label>Bio of Interviewee</label>
+                    <textarea id="interviewee-bio" placeholder="Bio" cols="30" rows="10" required></textarea>
+                    <button>Submit Details</button>
+                    <p class="error"></p>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-functions.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
+    <!-- Referencing the firebase-settings file -->
+    <script src="../scripts/firebase-settings.js"></script>
+
+    <script src="pagescripts/admin-index.js"></script>
+    <script src="pagescripts/admin-auth.js"></script>
+</body>
+
+</html>

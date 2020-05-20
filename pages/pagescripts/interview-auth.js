@@ -26,6 +26,29 @@ auth.onAuthStateChanged(user => {
     }
 });
 
+// Log in user
+const loginForm = document.querySelector('#login-form');
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Get user info from login form
+    const email = loginForm['login-email'].value;
+    const password = loginForm['login-password'].value;
+
+    // Log in the user via Firebase
+    auth.signInWithEmailAndPassword(email, password).then(cred => {
+        console.log(cred.user)
+        // Close login modal and reset the form
+        const login_modal_container = document.querySelector('#login_modal_container')
+        login_modal_container.classList.remove('show');
+        loginForm.reset();
+        loginForm.querySelector('.error').innerHTML = '';
+    }).catch(err => {
+        loginForm.querySelector('.error').innerHTML = err.message;
+    })
+})
+
+
 // Log out user
 const logout = document.querySelector('#logout')
 logout.addEventListener('click', (e) => {

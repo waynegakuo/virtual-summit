@@ -13,7 +13,7 @@
 
 <body>
     <nav>
-        <a class="home-link" href="../index.html">Virtual Summit</a>
+        <a class="home-link" href="../index.html">Virtual Retreat</a>
 
         <button class="burger" id="burger">
             &#9776
@@ -22,11 +22,11 @@
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li class="logged-in" style="display: none;"><a href="interview.html">View Interviews</a></li>
+            <li class="admin" style="display: none;"><a href="admin.html">Admin Panel</a></li>
             <li class="admin" style="display: none;"><a href="#" id="interview-open">Create Interview Details</a></li>
             <li class="logged-in" style="display: none;"><a href="#" id="logout">Logout</a></li>
             <li class="logged-in" style="display: none;"><a href="#" id="account-open">Account</a></li>
             <li class="logged-out" style="display: none;"><a href="#" id="login-open">Login</a></li>
-            <li class="logged-out" style="display: none;"><a href="#" id="signup-open">Sign Up</a></li>
         </ul>
     </nav>
 
@@ -65,7 +65,21 @@
         </div>
     </div>
 
-
+    <!-- LOGIN MODAL -->
+    <div class="login-modal-container" id="login_modal_container">
+        <div class="modal">
+            <span class="close" id="login_close"></span>
+            <h1>Log in</h1>
+            <form id="login-form">
+                <label for="email">Email Address</label>
+                <input type="email" placeholder="Email" id="login-email" required>
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="login-password" required>
+                <button>Log In</button>
+                <p class="error"></p>
+            </form>
+        </div>
+    </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
@@ -80,10 +94,8 @@
     <!-- Referencing the firebase-settings file -->
     <script src="../scripts/firebase-settings.js"></script>
 
-    <script src="interview-index.js"></script>
-    <!-- <script src="../scripts/auth.js"></script> -->
-    <script src="interview-auth.js"></script>
-    <!-- <script src="../scripts/index.js"></script> -->
+    <script src="pagescripts/interview-index.js"></script>
+    <script src="pagescripts/interview-auth.js"></script>
 </body>
 
 </html>

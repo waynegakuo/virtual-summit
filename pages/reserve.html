@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve Your Seat</title>
+
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/nav.css">
+</head>
+
+<body>
+    <nav>
+        <a class="home-link" href="../index.html">Virtual Retreat</a>
+
+        <button class="burger" id="burger">
+            &#9776
+        </button>
+
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="logged-in" style="display: none;"><a href="interview.html">View Interviews</a></li>
+            <li class="admin" style="display: none;"><a href="#" id="interview-open">Create Interview Details</a></li>
+            <li class="logged-in" style="display: none;"><a href="#" id="logout">Logout</a></li>
+            <li class="logged-in" style="display: none;"><a href="#" id="account-open">Account</a></li>
+            <li class="logged-out" style="display: none;"><a href="#" id="login-open">Login</a></li>
+            <li class="logged-out" style="display: none;"><a href="#" id="signup-open">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <form id="opt-in-form" class="opt-in-form">
+        <label for="email">Email Address</label>
+        <input type="email" placeholder="Your email address" id="opt-in-email" required>
+        <label for="name">Full Name</label>
+        <input type="text" placeholder="Your full name" id="opt-in-name" required>
+        <label for="name">Create A Password</label>
+        <input type="password" placeholder="Password" id="opt-in-password" required>
+        <button>Subscribe</button>
+        <p class="error"></p>
+    </form>
+
+    <!-- THANK YOU MODAL -->
+    <div class="thankyou-modal-container" id="thankyou_modal_container">
+        <div class="modal">
+            <!-- <span class="close" id="interview_close"></span> -->
+            <p>Congatulations! Your seat has been reserved. Be on the lookout for an email that will be sent to you</p>
+            <img src="../img/celebrate.png" alt="celebrate" style="width: 50%; height: 50%;">
+            <button id="thankyou_close">Done</button>
+        </div>
+    </div>
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-functions.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+              https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
+    <!-- Referencing the firebase-settings file -->
+    <script src="../scripts/firebase-settings.js"></script>
+
+    <script src="pagescripts/reserve-index.js"></script>
+    <script src="pagescripts/reserve-auth.js"></script>
+</body>
+
+</html>

@@ -458,6 +458,10 @@ sup {
         font-size: 10px; 
     }
 
+    .intro-que:last-child {
+        padding: 15px;
+    }
+
     .intro-video {
         width: 90%;
     }
@@ -468,7 +472,7 @@ sup {
 
     .intro-text-que-main.p0, .intro-text-que-main.p1, .intro-text-que-main.p2, .intro-text-que-main.p3 {
         margin: 0;
-        font-size: 1em;
+        font-size: 16px;
         width: 100%;
         font-weight: lighter;
     }
@@ -497,8 +501,14 @@ sup {
     }
 
     .intro-text-que {
-        /* margin-left: 10px; */
         font-size: 1.05em;
+        color: #0b6623;
+        line-break: auto;
+        width: 100%;
+        font-weight: bold;
+    }
+    .intro-text-que-fvr {
+        font-size: 1em;
         line-break: auto;
         width: 100%;
         font-weight: bold;

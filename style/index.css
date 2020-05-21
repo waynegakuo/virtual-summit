@@ -466,7 +466,7 @@ sup {
         width: 100%;
     }
 
-    .intro-text-que-main.p0, .intro-text-que-main.p1, .intro-text-que-main.p2 {
+    .intro-text-que-main.p0, .intro-text-que-main.p1, .intro-text-que-main.p2, .intro-text-que-main.p3 {
         margin: 0;
         font-size: 1em;
         width: 100%;
@@ -485,7 +485,7 @@ sup {
         font-size: 15px;
         text-align: center;
         align-self: center;
-        margin: 10px 20px 20px 120px;
+        margin: 10px 0 20px 120px;
         text-decoration: none;
         border-style: none;
         border-radius: 5px;
@@ -498,10 +498,10 @@ sup {
 
     .intro-text-que {
         /* margin-left: 10px; */
-        font-size: 1.3em;
+        font-size: 1.2em;
         line-break: auto;
         width: 100%;
-        font-weight: bolder;
+        font-weight: bold;
     }
 
     span.fvr {

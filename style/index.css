@@ -1,4 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Poppins';
+@import 'https://fonts.googleapis.com/css?family=Playfair';
 * {
     box-sizing: border-box;
     font-family: Poppins, sans-serif;
@@ -190,7 +191,6 @@ img {
     justify-content: center;
     border-radius: 5px;
     padding: 30px 50px;
-    /* background-color: white; */
     background-color: #efefef;
     width: 600px;
     max-width: 100%;
@@ -310,6 +310,93 @@ iframe{
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); 
 }
 
+#opt-in-form .error {
+    color: red;
+    font-weight: bold;
+}
+
+.thankyou-modal-container{
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+}
+.thankyou-modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.intro-text {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 20px;
+    width: 90%;
+    /* align-self: center; */
+}
+
+.reserve-seat {
+    font-size: 1.5em;
+    text-align: center;
+    align-self: center;
+    margin: 20px 20px 20px 400px;
+    text-decoration: none;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #0b6623;
+    color: white;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-date{
+    margin: 0 0 0 50px;
+    font-size: 1.4em;
+    /* width: 100%; */
+    font-weight: bold;
+}
+
+sup {
+    font-size: 15px;
+}
+
+.intro-text-que {
+    margin: 0;
+    font-size: 2.5em;
+    width: 100%;
+    font-weight: bolder;
+}
+.intro-que {
+    padding: 30px;
+}
+.intro-text-que-main {
+    margin: 0;
+    font-size: 1.3em;
+    width: 100%;
+    font-weight: bold;
+}
+
+.push{
+    margin-left: 30px;
+}
+
 /* responsiveness */
 @media (max-width: 480px) {
     .interviews{
@@ -354,29 +441,49 @@ iframe{
        margin-top: 300px;
        transition: all 0.3s ease; 
     }
-}
+    .event-date{
+        margin: 0 0 0 90px;
+        font-size: 1.4em;
+        font-weight: bold;
+    }
 
-#opt-in-form .error {
-    color: red;
-    font-weight: bold;
-}
+    .intro-video {
+        width: 90%;
+    }
 
-.thankyou-modal-container{
-    opacity: 0;
-    pointer-events: none;
-    position: fixed;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: opacity 0.3s ease;
-}
-.thankyou-modal-container.show {
-    pointer-events: auto;
-    opacity: 1;
+    .intro-video iframe{
+        width: 100%;
+    }
+
+    .intro-text-que-main.p1, .intro-text-que-main.p2 {
+        margin: 0;
+        font-size: 1.3em;
+        width: 100%;
+        font-weight: bold;
+    }
+    .intro-text-que-main.push {
+        margin-left: 10px
+    }
+
+    .reserve-seat {
+        font-size: 1.2em;
+        text-align: center;
+        align-self: center;
+        margin: 20px 20px 20px 200px;
+        text-decoration: none;
+        border-style: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 10px;
+        background-color: #0b6623;
+        color: white;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro-text-que {
+        margin-left: 20px;
+        font-size: 2em;
+        width: 100%;
+        font-weight: bolder;
+    }
 }

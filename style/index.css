@@ -352,7 +352,7 @@ iframe{
 }
 
 .reserve-seat {
-    font-size: 1.5em;
+    font-size: 15px;
     text-align: center;
     align-self: center;
     margin: 20px 20px 20px 400px;
@@ -392,21 +392,11 @@ sup {
 .intro-que {
     padding: 30px;
 }
-.intro-text-que-main.p0, .intro-text-que-main.p1, .intro-text-que-main.p2, .intro-text-que-main.p3 {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+.intro-text-que-main.p0, .intro-text-que-main.p1, .intro-text-que-main.p2, .intro-text-que-main.p3, .intro-text-que-main.p4 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.2em;
     width: 100%;
-    font-weight: lighter;
-}
-.intro-text-que-main.p1{
-    margin-left: 50px;
-}
-
-.intro-text-que-main.p2{
-    margin-left: 100px;
+    font-weight: bold;
 }
 
 /* responsiveness */

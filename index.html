@@ -8,13 +8,6 @@
     <link rel="stylesheet" href="style/nav.css">
     <link rel="stylesheet" href="style/index.css">
 
-    <script type="text/javascript">
-        window.addEventListener("beforeunload", function (event) {
-            event.returnValue = "\o/";
-        });
-
-    </script>
-
 </head>
 
 <body>
@@ -27,6 +20,7 @@
 
         <ul>
             <li><a href="index.html">Home</a></li>
+            <li class="logged-in" style="display: none;"><a href="pages/sessions.html">Sessions</a></li>
             <li class="logged-in" style="display: none;"><a href="pages/interview.html">View Interviews</a></li>
             <li class="admin" style="display: none;"><a href="pages/admin.html">Admin Panel</a></li>
             <li class="admin" style="display: none;"><a href="#" id="logout">Logout</a></li>
@@ -34,7 +28,8 @@
         </ul>
     </nav>
     <div class="banner">
-        <img src="img/banner_green_2.jpg" alt="banner">
+        <!-- <img class="normal_view" src="img/banner_green_2.jpg" alt="banner"> -->
+        <img class="mobile_view" src="img/banner_mobile_view.jpg" alt="mobile_banner_view">
     </div>
     <div class="content">
 
@@ -72,7 +67,7 @@
                 </p>
                 <br>
                 <p class="intro-text-que-main p3">Join us embodying our souls abundance by shifting from . . .</p>
-                <p class="intro-text-que-main p4">. . . a mind of poverty to a heart of wealth . . .</p>
+                <p class="intro-text-que-main p4">. . . a mind of poverty to a heart of wealth.</p>
             </div>
         </div>
 

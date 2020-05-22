@@ -29,23 +29,36 @@
         </ul>
     </nav>
 
-    <form id="opt-in-form" class="opt-in-form">
-        <label for="email">Email Address</label>
-        <input type="email" placeholder="Your email address" id="opt-in-email" required>
-        <label for="name">Full Name</label>
-        <input type="text" placeholder="Your full name" id="opt-in-name" required>
-        <label for="name">Create A Password</label>
-        <input type="password" placeholder="Password" id="opt-in-password" required>
-        <button>Subscribe</button>
-        <p class="error"></p>
-    </form>
+    <div class="reserve_content">
+        <p class="fill_details_lead">THANK YOU! . . . </p>
+        <p class="fill_details_lead2">for taking the leap to making abundance . . .</p>
+        <p class="fill_details_lead3">. . . your new normal.</p>
+        <p class="fill_details_kindly">Kindly fill in the details below to reserve your seat</p>
+        <form id="opt-in-form" class="opt-in-form">
+            <label for="name">First Name</label>
+            <input type="text" placeholder="First Name" id="opt-in-name" required>
+            <label for="email">Email Address</label>
+            <input type="email" placeholder="Your email address" id="opt-in-email" required>
+            <label for="name">Create A Password</label>
+            <input type="password" placeholder="Password" id="opt-in-password" required>
+            <label for="name">Confirm Password</label>
+            <input type="password" placeholder="Confirm Password" id="opt-in-confirm" required>
+            <button>Reserve Your Seat</button>
+            <p class="error"></p>
+        </form>
+    </div>
+
+
+
+    <button class="thanks_test">Thank You</button>
 
     <!-- THANK YOU MODAL -->
     <div class="thankyou-modal-container" id="thankyou_modal_container">
         <div class="modal">
             <!-- <span class="close" id="interview_close"></span> -->
-            <p>Congatulations! Your seat has been reserved. Be on the lookout for an email that will be sent to you</p>
+            <p class="success_msg_first">SUCCESS!</p>
             <img src="../img/celebrate.png" alt="celebrate" style="width: 50%; height: 50%;">
+            <p class="success_msg">Your seat is reserved. You wil receive an email from us shortly</p>
             <button id="thankyou_close">Done</button>
         </div>
     </div>

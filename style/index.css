@@ -28,7 +28,7 @@ img {
     width: 100%;
 }
 
-#opt-in-email, #opt-in-name, #opt-in-password{
+#opt-in-email, #opt-in-name, #opt-in-password, #opt-in-confirm{
     padding: 10px;
     width: 40%;
     outline: none;
@@ -49,7 +49,7 @@ img {
     border-radius: 5px;
     cursor: pointer;
     padding: 10px;
-    background-color: #2c405e;
+    background-color: #0b6623;
     color: white;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
@@ -214,7 +214,7 @@ img {
 
 .modal button {
     margin-top: 30px;
-    background-color: #47a386;
+    background-color: #0b6623;
     color: white;
     border: 0;
     border-radius: 5px;
@@ -273,7 +273,7 @@ iframe{
     border-radius: 5px;
     cursor: pointer;
     padding: 10px;
-    background-color: #2c405e;
+    background-color: #0b6623;
     color: white;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
@@ -291,7 +291,7 @@ iframe{
     border-radius: 5px;
     cursor: pointer;
     padding: 10px;
-    background-color: #2c405e;
+    background-color: #0b6623;
     color: white;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); 
 }
@@ -305,7 +305,7 @@ iframe{
     border-radius: 5px;
     cursor: pointer;
     padding: 10px;
-    background-color: #2c405e;
+    background-color: #0b6623;
     color: white;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); 
 }
@@ -399,6 +399,40 @@ sup {
     font-weight: bold;
 }
 
+.modal .success_msg_first {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.modal .success_msg {
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.reserve_content{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.reserve_content .fill_details_lead {
+    font-size: 2em;
+    font-weight: bolder;
+}
+.reserve_content .fill_details_lead2, .reserve_content .fill_details_lead3{
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.reserve_content .fill_details_kindly {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
 /* responsiveness */
 @media (max-width: 480px) {
     .interviews{
@@ -472,7 +506,7 @@ sup {
         width: 100%;
     }
 
-    .intro-text-que-main.p0, .intro-text-que-main.p1, .intro-text-que-main.p2, .intro-text-que-main.p3 {
+    .intro-text-que-main.p0, .intro-text-que-main.p1, .intro-text-que-main.p2, .intro-text-que-main.p3, .intro-text-que-main.p4 {
         margin: 0;
         font-size: 14px;
         width: 100%;
@@ -523,5 +557,36 @@ sup {
         width: 50%;
     }
 
+    /* Reserve seat form  */
+    .reserve_content .fill_details_lead {
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+    .reserve_content .fill_details_lead2, .reserve_content .fill_details_lead3{
+        font-size: 1em;
+        margin: 0;
+        font-weight: bold;
+    }
+    
+    .reserve_content .fill_details_kindly {
+        font-size: 13px;
+        text-align: center;
+        font-weight: lighter;
+    }
 
+    #opt-in-email, #opt-in-name, #opt-in-password, #opt-in-confirm{
+        width: 100%;
+    }
+
+    .opt-in-form > button {
+        font-size: 12px;
+        margin-top: 30px;
+        border-style: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 10px;
+        background-color: #0b6623;
+        color: white;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    }
 }

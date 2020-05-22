@@ -29,9 +29,6 @@ account_close.addEventListener('click', () => {
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 
-// Reference link to interviews in the landing page
-const viewInterviews = document.querySelector('.view-interviews');
-
 
 // Reference to the account pop-up
 const accountDetails = document.querySelector('.account-details');
@@ -64,7 +61,6 @@ const setupUI = (user) => {
         // Toggle UI elements
         loggedInLinks.forEach(item => item.style.display = 'block');
         loggedOutLinks.forEach(item => item.style.display = 'none');
-        viewInterviews.style.display = 'flex'
     }
     else { // When logged out
         // Hide admin items
@@ -72,7 +68,6 @@ const setupUI = (user) => {
         // Hide account info
         accountDetails.innerHTML = '';
         // Toggle UI elements
-        viewInterviews.style.display = 'none'
         loggedInLinks.forEach(item => item.style.display = 'none');
         loggedOutLinks.forEach(item => item.style.display = 'block');
     }

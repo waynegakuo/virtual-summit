@@ -50,8 +50,16 @@ loginForm.addEventListener('submit', (e) => {
 
 
 // Log out user
-const logout = document.querySelector('#logout')
+const logout = document.querySelector('#logout');
+
 logout.addEventListener('click', (e) => {
     e.preventDefault();
+    const content = document.querySelector('.content');
+    const ul = document.querySelector('nav ul');
+    const interviewContent = document.querySelector('.interview-list');
+
     auth.signOut();
+    content.classList.toggle('push'); // When in mobile view
+    ul.classList.toggle('show'); // When in mobile view
+    interviewContent.style.display = 'none';
 })

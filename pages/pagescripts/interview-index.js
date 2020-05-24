@@ -11,14 +11,19 @@ burger.addEventListener('click', () => {
     content.classList.toggle('push');
 })
 
+const loggedOutNotif = document.querySelector('.logged-out-notification')
+
 const openAccount = document.getElementById('account-open'); // trigger button
 const account_modal_container = document.getElementById('account_modal_container'); // the container to appear after trigger
 const account_close = document.getElementById('account_close');
 const openLogin = document.getElementById('login-open');
+const openLoginInterview = document.getElementById('login-open-notif') // Interview page
 
 const openInterview = document.getElementById('interview-open');
 const interview_modal_container = document.getElementById('interview_modal_container');
 const login_modal_container = document.getElementById('login_modal_container');
+
+const login_close = document.getElementById('login_close');
 
 openAccount.addEventListener('click', () => {
     ul.classList.toggle('show'); // When in mobile view
@@ -44,6 +49,15 @@ interview_close.addEventListener('click', () => {
 
 openLogin.addEventListener('click', () => {
     ul.classList.toggle('show');
+    content.classList.toggle('push'); // When in mobile view
+    login_modal_container.classList.add('show');
+});
+login_close.addEventListener('click', () => {
+    login_modal_container.classList.remove('show');
+});
+
+// For the interview page
+openLoginInterview.addEventListener('click', () => {
     login_modal_container.classList.add('show');
 });
 
@@ -85,6 +99,8 @@ const setupUI = (user) => {
         loggedOutLinks.forEach(item => item.style.display = 'none');
     }
     else {
+        // remove adminItems
+        adminItems.forEach(item => item.style.display = 'none');
         // Toggle UI elements
         loggedInLinks.forEach(item => item.style.display = 'none');
         loggedOutLinks.forEach(item => item.style.display = 'block');
@@ -121,12 +137,13 @@ const setupInterviews = (data) => {
 
             html += list;
         });
-
+        
         interviewList.innerHTML = html;
+        loggedOutNotif.style.display = 'none'
     }
 
     //if we don't have the length, instead of showing nothing, we show some information
     else {
-        interviewList.innerHTML = '<h5>Login to view interviews posted</h5>'
+        loggedOutNotif.style.display = 'flex'
     }
 }

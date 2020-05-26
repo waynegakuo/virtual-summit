@@ -537,6 +537,13 @@ sup {
     width: 70%;
     height: 90%;
 }
+
+/* Suki as a host image reworks */
+.session-content .host #suki .front .host-image img {
+    width: 70%;
+    height: 90%;
+}
+/* Suki as a speaker image reworks */
 .session-content .speaker #suki .front .speaker-image img {
     width: 70%;
     height: 80%;

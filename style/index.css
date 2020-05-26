@@ -624,6 +624,25 @@ sup {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Extra info mid and end */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+}
+.mid-info {
+    width: 50%;
+}
+.mid-info p {
+    text-align: center;
+    margin: 0;
+    font-size: 1.1em;
+    width: 100%;
+}
+
 
 /* responsiveness */
 @media (max-width: 480px) {

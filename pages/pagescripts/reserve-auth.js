@@ -43,5 +43,7 @@ submitOptinInfo.addEventListener('submit', (e) => {
 
 // close modal triggered by button
 thankyou_close.addEventListener('click', () => {
+    auth.signOut();
     thankyou_modal_container.classList.remove('show');
+    window.location.href = '../index.html'
 });

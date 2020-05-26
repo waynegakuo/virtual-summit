@@ -373,10 +373,11 @@ iframe{
 }
 
 .reserve-seat {
-    font-size: 15px;
+    font-size: 1.5em;
+    width: 20%;
     text-align: center;
     align-self: center;
-    margin: 20px 20px 20px 400px;
+    margin: 20px 20px 20px 0;
     text-decoration: none;
     border-style: none;
     border-radius: 5px;
@@ -390,7 +391,6 @@ iframe{
 .event-date{
     margin: 0 0 0 50px;
     font-size: 1.4em;
-    /* width: 100%; */
     font-weight: bold;
 }
 
@@ -466,14 +466,15 @@ sup {
 
 .host-head, .speaker-head {
     color: #0b6623;
-    font-weight: bolder;
-    font-size: 2em;
+    font-weight: bold;
+    font-size: 1.2em;
+
 }
 
 /* Host and Speaker section styling */
 .session-content .host .host-card, .session-content .speaker .speaker-card {
     width: 300px;
-    height: 320px;
+    height: 330px;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
     background-color: whitesmoke;
@@ -528,6 +529,17 @@ sup {
     height: 80%;
     border-radius: 50%;
     border: 2px solid #7bdd95;
+}
+
+/* Styling images for speaker cards with more than one line of quote */
+.session-content .speaker .speaker-card:nth-child(2) .front .speaker-image img, 
+.session-content .speaker .speaker-card:nth-child(3) .front .speaker-image img {
+    width: 70%;
+    height: 90%;
+}
+.session-content .speaker #suki .front .speaker-image img {
+    width: 70%;
+    height: 80%;
 }
 
 .session-content .host .host-card .front .host-info, 
@@ -695,18 +707,8 @@ sup {
     }
 
     .reserve-seat {
-        font-size: 15px;
-        text-align: center;
-        align-self: center;
-        margin: 10px 0 20px 120px;
-        text-decoration: none;
-        border-style: none;
-        border-radius: 5px;
-        cursor: pointer;
-        padding: 10px;
-        background-color: #0b6623;
-        color: white;
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        width: 50%;
+        font-size: 14px;
     }
 
     .intro-text-que {

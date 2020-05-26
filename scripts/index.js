@@ -3,8 +3,15 @@ const burger = document.getElementById('burger');
 const ul = document.querySelector('nav ul');
 const content = document.querySelector('.content');
 const banner = document.querySelector('.banner');
+const sessionAnchor = document.getElementById('session-anchor')
 
 burger.addEventListener('click', () => {
+    ul.classList.toggle('show');
+    content.classList.toggle('push');
+    banner.classList.toggle('push');
+})
+
+sessionAnchor.addEventListener('click', () => {
     ul.classList.toggle('show');
     content.classList.toggle('push');
     banner.classList.toggle('push');
@@ -19,6 +26,7 @@ const account_close = document.getElementById('account_close');
 openAccount.addEventListener('click', () => {
     ul.classList.toggle('show');
     banner.classList.toggle('push');
+    content.classList.toggle('push'); // When in mobile view
     account_modal_container.classList.add('show');
 })
 account_close.addEventListener('click', () => {
@@ -52,11 +60,11 @@ const setupUI = (user) => {
         db.collection('users').doc(user.uid).get().then(doc => {
             const html = `
             <div>Logged in as ${user.email}</div>
-            <div>Bio: ${doc.data().bio}</div>
+            <div>Bio: ${doc.data().name}</div>
             <div class="pink-text">${user.admin ? 'Admin' : ''}</div>
         `;
             accountDetails.innerHTML = html;
-            
+
         })
         // Toggle UI elements
         loggedInLinks.forEach(item => item.style.display = 'block');

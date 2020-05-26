@@ -20,7 +20,7 @@
 
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#sessions">Sessions</a></li>
+            <li><a id="session-anchor" href="#sessions">Sessions</a></li>
             <li class="logged-in" style="display: none;"><a href="pages/interview.html">View Interviews</a></li>
             <li class="admin" style="display: none;"><a href="pages/admin.html">Admin Panel</a></li>
             <li class="admin" style="display: none;"><a href="#" id="logout">Logout</a></li>
@@ -34,7 +34,7 @@
     <div class="content">
 
         <div class="headers">
-            <h3 class="event-date">29<sup>TH</sup> MAY - 31<sup>ST</sup> MAY 2020</h3>
+            <h3 class="event-date">31<sup>ST</sup> MAY 2020</h3>
 
             <span class="fvr intro-text-que-fvr" style="display: none;"> <b style=" width: 100%; color: red;">FREE</b>
                 Virtual Retreat</span>
@@ -73,9 +73,6 @@
 
         <a href="pages/reserve.html" class="reserve-seat">GRAB YOUR SEAT >></a>
 
-        <!-- <a href="pages/interview.html" class="view-interviews" style="display: none;">View Interviews Posted >></a> -->
-
-
         <!-- ACCOUNT MODAL -->
         <div class="account-modal-container" id="account_modal_container">
             <div class="modal">
@@ -84,31 +81,14 @@
                 <div class="account-details"></div>
             </div>
         </div>
-
-
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-functions.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
-
-        <!-- Referencing the firebase-settings file -->
-        <script src="scripts/firebase-settings.js"></script>
-
-        <script src="scripts/index.js"></script>
-        <script src="scripts/auth.js"></script>
     </div>
     <div id="sessions" class="session-content">
         <span class="host-head">Host</span>
         <div class="host">
-            <div class="host-card">
+            <div class="host-card" id="suki">
                 <div class="front">
                     <div class="host-image">
-                        <img src="../img/user_icon_3.png" alt="">
+                        <img src="img/suki.jpg" alt="">
                     </div>
                     <div class="host-info">
                         <span>Prof. Suki Mwendwa</span>
@@ -132,10 +112,10 @@
             <div class="speaker-card">
                 <div class="front">
                     <div class="speaker-image">
-                        <img src="../img/user_icon_3.png" alt="">
+                        <img src="img/hodan.png" alt="">
                     </div>
                     <div class="speaker-info">
-                        <span>Hodan Mohamud</span>
+                        <span>Hodan Mohamed</span>
                         <span><b>"Mind Your Money Matters"</b></span>
                         <span>Kenya</span>
                     </div>
@@ -155,7 +135,7 @@
             <div class="speaker-card">
                 <div class="front">
                     <div class="speaker-image">
-                        <img src="../img/user_icon_3.png" alt="">
+                        <img src="img/mandi.png" alt="">
                     </div>
                     <div class="speaker-info">
                         <span>Prof Mandi Rukuni</span>
@@ -178,10 +158,10 @@
             <div class="speaker-card">
                 <div class="front">
                     <div class="speaker-image">
-                        <img src="../img/user_icon_3.png" alt="">
+                        <img src="img/kristin.jpg" alt="">
                     </div>
                     <div class="speaker-info">
-                        <span>Kristin Kaufaman</span>
+                        <span>Kristin Kaufman</span>
                         <span><b>"It's never too late to find your seat"</b></span>
                         <span>Kenya</span>
                     </div>
@@ -201,12 +181,12 @@
             <div class="speaker-card">
                 <div class="front">
                     <div class="speaker-image">
-                        <img src="../img/user_icon_3.png" alt="">
+                        <img src="img/kenneth.jpg" alt="">
                     </div>
                     <div class="speaker-info">
-                        <span>Prof Kenneth Yogubi</span>
+                        <span>Prof Kenneth Yongabi</span>
                         <span><b>"You do You!"</b></span>
-                        <span>Kenya</span>
+                        <span>Cameroon</span>
                     </div>
                 </div>
                 <div class="back">
@@ -224,10 +204,10 @@
             <div class="speaker-card">
                 <div class="front">
                     <div class="speaker-image">
-                        <img src="../img/user_icon_3.png" alt="">
+                        <img src="img/raju.jpg" alt="">
                     </div>
                     <div class="speaker-info">
-                        <span>Dr Raju Gannavarapu</span>
+                        <span>Dr Raju S. Gannavarapu</span>
                         <span><b>"God is in the Detail"</b></span>
                         <span>Kenya</span>
                     </div>
@@ -239,10 +219,10 @@
                     </div>
                 </div>
             </div>
-            <div class="speaker-card">
+            <div class="speaker-card" id="suki">
                 <div class="front">
                     <div class="speaker-image">
-                        <img src="../img/user_icon_3.png" alt="">
+                        <img src="img/suki.jpg" alt="">
                     </div>
                     <div class="speaker-info">
                         <span>Prof Suki Mwendwa</span>
@@ -259,8 +239,24 @@
                 </div>
             </div>
         </div>
-        <a href="reserve.html" class="reserve-seat-session">GRAB YOUR SEAT >></a>
+        <a href="pages/reserve.html" class="reserve-seat">GRAB YOUR SEAT >></a>
     </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-functions.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
+    <!-- Referencing the firebase-settings file -->
+    <script src="scripts/firebase-settings.js"></script>
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/auth.js"></script>
 </body>
 
 </html>

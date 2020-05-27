@@ -680,8 +680,6 @@ sup {
     }
     .content.push {
         transform: translateY(20%);
-        /* margin-top: 200px; */
-        /* transition: all 0.3s ease; */
         transition: transform 0.4s ease;
     } 
     .banner.push {
@@ -696,10 +694,10 @@ sup {
     }
 
     .event-date{
-        margin: 0 0 0 70px;
+        align-self: center;
         font-size: 1em;
         font-weight: bold;
-        width: 60%;
+        width: 50%;
     }
     sup {
         font-size: 10px; 
@@ -825,5 +823,18 @@ sup {
 
     .go-to-login {
         margin: 20px;
+    }
+
+    /* Extra info mid and end */
+    .mid-info {
+        width: 100%;
+    }
+
+    .mid-info p {
+        font-size: 14px;
+    }
+
+    iframe{
+        height: 100%;
     }
 }

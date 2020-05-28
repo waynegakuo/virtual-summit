@@ -124,7 +124,7 @@ const setupInterviews = (data) => {
             const list = `
                 <div class="interviews">
                     <div class="video">
-                        <iframe id="video_link" width="100%" height="315" src="https://www.youtube.com/embed/M3BM9TB-8yA"
+                        <iframe id="video_link" width="640" height="360" src="${interview.video_link}?title=0&byline=0&portrait=0"
                             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>

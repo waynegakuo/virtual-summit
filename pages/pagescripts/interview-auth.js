@@ -48,6 +48,29 @@ loginForm.addEventListener('submit', (e) => {
     })
 })
 
+// Create new interview from input and put in the interviews collection
+const createForm = document.querySelector('#interview-form');
+
+createForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    db.collection('interviews').add({
+        bio: createForm['interviewee-bio'].value,
+        name: createForm['interviewee-name'].value,
+        video_link: createForm['interviewee-video-link'].value,
+        website: createForm['interviewee-website'].value
+    }).then(() => {
+        // Close the modal and reset form
+        console.log('Done sending info')
+        const interview_modal_container = document.querySelector('#interview_modal_container')
+        interview_modal_container.classList.remove('show');
+        createForm.reset();
+        createForm.querySelector('.error').innerHTML = '';
+    }).catch(err => {
+        console.log(err.message)
+    })
+})
+
 
 // Log out user
 const logout = document.querySelector('#logout');

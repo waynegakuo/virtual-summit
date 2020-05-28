@@ -84,9 +84,10 @@ const setupUI = (user) => {
         // Show account info & use the user's unique id to query the firestore for a specific document in a specific collection
         db.collection('users').doc(user.uid).get().then(doc => {
             const html = `
-            <div>Logged in as ${user.email}</div>
-            <div>Bio: ${doc.data().name}</div>
-            <div class="pink-text">${user.admin ? 'Admin' : ''}</div>
+            <img src="img/user_icon.png" style="width: 30%; height: 30%; border-radius: 50% margin: 0"/>
+            <div>Logged in as: ${doc.data().name}</div>
+            <div>Email: ${user.email}</div>
+            <div style="color: red; font-weight: bold">${user.admin ? 'Admin' : ''}</div>
         `;
             accountDetails.innerHTML = html;
 

@@ -91,7 +91,7 @@ const setupUI = (user) => {
             <img src="../img/user_icon.png" style="width: 30%; height: 30%; border-radius: 50% margin: 0"/>
             <div>Logged in as: ${doc.data().name}</div>
             <div>Email: ${user.email}</div>
-            <div class="pink-text">You are an ${user.admin ? 'Admin' : ''}</div>
+            <div style="color: red; font-weight: bold">${user.admin ? 'Admin' : ''}</div>
         `;
             accountDetails.innerHTML = html;
         })

@@ -1,9 +1,34 @@
+// Show popup when user wants to leave page
+const exitintent_modal_container = document.getElementById('exitintent_modal_container');
+const exit_close = document.getElementById('exit_close');
+
+function onMouseOut(event) {
+    // If the mouse is near the top of the window, show the popup
+    // Also, do NOT trigger when hovering or clicking on selects
+    if (
+        event.clientY < 50 &&
+        event.relatedTarget == null &&
+        event.target.nodeName.toLowerCase() !== 'select') {
+        // Remove this event listener
+        document.removeEventListener("mouseout", onMouseOut);
+
+        // Show the popup
+        exitintent_modal_container.classList.add('show'); // trigger the opening of the modal
+    }
+}
+document.addEventListener("mouseout", onMouseOut);
+// close modal triggered by exit intent button
+exit_close.addEventListener('click', () => {
+    exitintent_modal_container.classList.remove('show');
+});
+
+
 // Toggle menu items in mobile view
 const burger = document.getElementById('burger');
 const ul = document.querySelector('nav ul');
 const content = document.querySelector('.content');
 const banner = document.querySelector('.banner');
-const sessionAnchor = document.getElementById('session-anchor')
+const sessionAnchor = document.getElementById('session-anchor');
 
 burger.addEventListener('click', () => {
     ul.classList.toggle('show');

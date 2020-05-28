@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style/nav.css">
     <link rel="stylesheet" href="style/index.css">
 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -48,15 +51,10 @@
             </div>
             <!-- Video goes in here -->
             <div class="intro-video">
-                <!-- <iframe id="video_link" src="https://player.vimeo.com/video/423187365?title=0&byline=0&portrait=0"
-                    width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/gA7y94dBInQ" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <iframe id="video_link" src="https://player.vimeo.com/video/423187365?title=0&byline=0&portrait=0"
+                    width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
             <!-- Intro text goes in here -->
-
-
             <div class="intro-que">
                 <p class="intro-text-que-main p0" style="align-self: center;">Are you living your purpose and reason to
                     be?
@@ -261,6 +259,17 @@
             </div>
         </div>
         <a href="pages/reserve.html" class="reserve-seat">GRAB YOUR SEAT >></a>
+    </div>
+
+    <!-- Popup on exit intent -->
+    <div class="exitintent-modal-container" id="exitintent_modal_container">
+        <div class="modal">
+            <!-- <span class="close" id="interview_close"></span> -->
+            <p class="success_msg_first">WAIT!</p>
+            <img src="img/wait_vs.png" alt="celebrate" style="width: 50%; height: 50%;">
+            <p class="success_msg">Don't leave just yet! Join us.</p>
+            <button id="exit_close">OK</button>
+        </div>
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->

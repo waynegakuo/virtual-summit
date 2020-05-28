@@ -643,6 +643,27 @@ sup {
     width: 100%;
 }
 
+/* Wait modal and its container */
+.exitintent-modal-container{
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+}
+.exitintent-modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
 
 /* responsiveness */
 @media (max-width: 480px) {

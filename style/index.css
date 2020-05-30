@@ -110,6 +110,12 @@ img {
     background-color: rgba(0, 0, 0, 0.3);
     transition: opacity 0.3s ease;
 }
+.login-modal-container .reset-link {
+    align-self: flex-end;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+}
 #login-email, #login-password {
     padding: 10px;
     width: 100%;
@@ -665,6 +671,80 @@ sup {
     opacity: 1;
 }
 
+/* Provide email address for reset */
+.reset {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 40px auto; 
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 5px;
+    border: lightgrey 2px solid;
+}
+
+.reset .reset-head-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 20px;
+    text-align: center;
+}
+.reset #reset-email{
+    padding: 10px;
+    width: 80%;
+    font-size: 1em;
+    outline: none;
+    border: 1px solid white ;
+    border-radius: 10px;
+}
+
+.reset button {
+    margin-top: 30px;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #0b6623;
+    color: white;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.modal .success_msg_first_reset {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.modal .success_msg_reset {
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+.reset .error {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+}
+
+.passreset-modal-container{
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+}
+.passreset-modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
 
 /* responsiveness */
 @media (max-width: 480px) {

@@ -800,10 +800,12 @@ sup {
     }
 
     .event-date{
+        margin: 0;
+        text-align: center;
         align-self: center;
         font-size: 1em;
         font-weight: bold;
-        width: 50%;
+        width: 100%;
     }
     sup {
         font-size: 10px; 

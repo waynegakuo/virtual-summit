@@ -1,7 +1,7 @@
 const passreset_modal_container = document.getElementById('passreset_modal_container');
 const passreset_close = document.getElementById('passreset_close');
 /**
- * Send Email Reset to User
+ * Send Email Reset Notification to User through Firebase
  */
 const emailResetForm = document.querySelector('.reset-actions');
 

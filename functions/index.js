@@ -22,19 +22,21 @@ exports.addAdminRole = functions.https.onCall((data, context) => {
     // We are returning this bcz it's gonna return a promise & overall inside that promise at some point we want to 
     // return a value & that value is gonna be returned to the user
     // So if we're returning something inside this promise, we need to return the promise itself to return the overall value
-    return admin.auth().getUserByEmail(data.email).then(user => {
-        return admin.auth().setCustomUserClaims(user.uid, {
-            // this object represent the different claims we want to add to the user. We want to add just one: admin
-            admin: true
+    return admin.auth().getUserByEmail(data.email)
+        .then(user => {
+            return admin.auth().setCustomUserClaims(user.uid, {
+                // this object represent the different claims we want to add to the user. We want to add just one: admin
+                admin: true
+            })
         })
-    }).then(() => {
-        // Return a response to the user to the frontend
-        return {
-            message: `Success! ${data.email} has been made an admin`
-        }
-    }).catch(err => {
-        return err;
-    });
+        .then(() => {
+            // Return a response to the user to the frontend
+            return {
+                message: `Success! ${data.email} has been made an admin`
+            }
+        }).catch(err => {
+            return err;
+        });
 });
 
 // We deploy the functions only using firebase deploy --only functions ~ we check the functions tab in our Firebase project and see our first cloud function deployed

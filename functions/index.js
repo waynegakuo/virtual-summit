@@ -39,4 +39,9 @@ exports.addAdminRole = functions.https.onCall((data, context) => {
         });
 });
 
+exports.scheduledFunction = functions.pubsub.schedule('every 2 minutes').onRun((context) => {
+    console.log('This will be run every 2 minutes!');
+    return null;
+  });
+
 // We deploy the functions only using firebase deploy --only functions ~ we check the functions tab in our Firebase project and see our first cloud function deployed
